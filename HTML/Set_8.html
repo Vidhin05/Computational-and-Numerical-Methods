@@ -13295,7 +13295,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Q3.1.1">Q3.1.1<a class="anchor-link" href="#Q3.1.1">&#182;</a></h1>
+<h1 id="Q3.1.1-$e^{x}cos(4x)$-from-0-to-$\pi$">Q3.1.1 $e^{x}cos(4x)$ from 0 to $\pi$<a class="anchor-link" href="#Q3.1.1-$e^{x}cos(4x)$-from-0-to-$\pi$">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13304,14 +13304,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
 <span class="n">cint</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">17</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span> <span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Sn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -13348,6 +13348,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>n</th>
       <th>T(n)</th>
       <th>S(n)</th>
       <th>TError</th>
@@ -13357,6 +13358,7 @@ div#notebook {
   <tbody>
     <tr>
       <th>1</th>
+      <td>2.0</td>
       <td>4.563538</td>
       <td>4.563538</td>
       <td>3.261145</td>
@@ -13364,6 +13366,7 @@ div#notebook {
     </tr>
     <tr>
       <th>2</th>
+      <td>4.0</td>
       <td>-1.695019</td>
       <td>-0.898630</td>
       <td>-2.997412</td>
@@ -13371,6 +13374,7 @@ div#notebook {
     </tr>
     <tr>
       <th>3</th>
+      <td>8.0</td>
       <td>-2.919139</td>
       <td>-3.297136</td>
       <td>-4.221533</td>
@@ -13378,6 +13382,7 @@ div#notebook {
     </tr>
     <tr>
       <th>4</th>
+      <td>16.0</td>
       <td>-2.216152</td>
       <td>-2.438441</td>
       <td>-3.518545</td>
@@ -13385,6 +13390,7 @@ div#notebook {
     </tr>
     <tr>
       <th>5</th>
+      <td>32.0</td>
       <td>-0.766920</td>
       <td>-0.815313</td>
       <td>-2.069314</td>
@@ -13392,6 +13398,7 @@ div#notebook {
     </tr>
     <tr>
       <th>6</th>
+      <td>64.0</td>
       <td>0.208529</td>
       <td>0.199535</td>
       <td>-1.093865</td>
@@ -13399,6 +13406,7 @@ div#notebook {
     </tr>
     <tr>
       <th>7</th>
+      <td>128.0</td>
       <td>0.743767</td>
       <td>0.742045</td>
       <td>-0.558627</td>
@@ -13406,6 +13414,7 @@ div#notebook {
     </tr>
     <tr>
       <th>8</th>
+      <td>256.0</td>
       <td>1.020593</td>
       <td>1.020237</td>
       <td>-0.281800</td>
@@ -13413,6 +13422,7 @@ div#notebook {
     </tr>
     <tr>
       <th>9</th>
+      <td>512.0</td>
       <td>1.160929</td>
       <td>1.160850</td>
       <td>-0.141465</td>
@@ -13432,7 +13442,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Q-3.1.2">Q 3.1.2<a class="anchor-link" href="#Q-3.1.2">&#182;</a></h1>
+<h1 id="Q-3.1.2--$x^{2.5}$-from-0-to-1">Q 3.1.2  $x^{2.5}$ from 0 to 1<a class="anchor-link" href="#Q-3.1.2--$x^{2.5}$-from-0-to-1">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13441,14 +13451,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
 <span class="n">cint</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">7</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mf">0.5</span>
     <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span> <span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Sn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -13485,6 +13495,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>n</th>
       <th>T(n)</th>
       <th>S(n)</th>
       <th>TError</th>
@@ -13494,6 +13505,7 @@ div#notebook {
   <tbody>
     <tr>
       <th>1</th>
+      <td>2.0</td>
       <td>0.338388</td>
       <td>0.284518</td>
       <td>5.267406e-02</td>
@@ -13501,6 +13513,7 @@ div#notebook {
     </tr>
     <tr>
       <th>2</th>
+      <td>4.0</td>
       <td>0.298791</td>
       <td>0.285593</td>
       <td>1.307721e-02</td>
@@ -13508,6 +13521,7 @@ div#notebook {
     </tr>
     <tr>
       <th>3</th>
+      <td>8.0</td>
       <td>0.288975</td>
       <td>0.285702</td>
       <td>3.260454e-03</td>
@@ -13515,6 +13529,7 @@ div#notebook {
     </tr>
     <tr>
       <th>4</th>
+      <td>16.0</td>
       <td>0.286529</td>
       <td>0.285713</td>
       <td>8.142822e-04</td>
@@ -13522,6 +13537,7 @@ div#notebook {
     </tr>
     <tr>
       <th>5</th>
+      <td>32.0</td>
       <td>0.285918</td>
       <td>0.285714</td>
       <td>2.034940e-04</td>
@@ -13529,6 +13545,7 @@ div#notebook {
     </tr>
     <tr>
       <th>6</th>
+      <td>64.0</td>
       <td>0.285765</td>
       <td>0.285714</td>
       <td>5.086654e-05</td>
@@ -13536,6 +13553,7 @@ div#notebook {
     </tr>
     <tr>
       <th>7</th>
+      <td>128.0</td>
       <td>0.285727</td>
       <td>0.285714</td>
       <td>1.271601e-05</td>
@@ -13543,6 +13561,7 @@ div#notebook {
     </tr>
     <tr>
       <th>8</th>
+      <td>256.0</td>
       <td>0.285717</td>
       <td>0.285714</td>
       <td>3.178946e-06</td>
@@ -13550,6 +13569,7 @@ div#notebook {
     </tr>
     <tr>
       <th>9</th>
+      <td>512.0</td>
       <td>0.285715</td>
       <td>0.285714</td>
       <td>7.947314e-07</td>
@@ -13569,7 +13589,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Q-3.1.3">Q 3.1.3<a class="anchor-link" href="#Q-3.1.3">&#182;</a></h1>
+<h1 id="Q-3.1.3-$\frac{1}{1+(x-\pi)^{2}}$-from-0-to-5">Q 3.1.3 $\frac{1}{1+(x-\pi)^{2}}$ from 0 to 5<a class="anchor-link" href="#Q-3.1.3-$\frac{1}{1+(x-\pi)^{2}}$-from-0-to-5">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13578,14 +13598,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
 <span class="n">cint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">5.001</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
     <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span> <span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Sn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -13622,6 +13642,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>n</th>
       <th>T(n)</th>
       <th>S(n)</th>
       <th>TError</th>
@@ -13631,6 +13652,7 @@ div#notebook {
   <tbody>
     <tr>
       <th>1</th>
+      <td>2.0</td>
       <td>2.166655</td>
       <td>2.625095</td>
       <td>-0.173111</td>
@@ -13638,6 +13660,7 @@ div#notebook {
     </tr>
     <tr>
       <th>2</th>
+      <td>4.0</td>
       <td>2.268668</td>
       <td>2.302672</td>
       <td>-0.071099</td>
@@ -13645,6 +13668,7 @@ div#notebook {
     </tr>
     <tr>
       <th>3</th>
+      <td>8.0</td>
       <td>2.332270</td>
       <td>2.353471</td>
       <td>-0.007496</td>
@@ -13652,6 +13676,7 @@ div#notebook {
     </tr>
     <tr>
       <th>4</th>
+      <td>16.0</td>
       <td>2.337813</td>
       <td>2.339660</td>
       <td>-0.001953</td>
@@ -13659,6 +13684,7 @@ div#notebook {
     </tr>
     <tr>
       <th>5</th>
+      <td>32.0</td>
       <td>2.339277</td>
       <td>2.339765</td>
       <td>-0.000489</td>
@@ -13666,6 +13692,7 @@ div#notebook {
     </tr>
     <tr>
       <th>6</th>
+      <td>64.0</td>
       <td>2.339644</td>
       <td>2.339766</td>
       <td>-0.000122</td>
@@ -13673,6 +13700,7 @@ div#notebook {
     </tr>
     <tr>
       <th>7</th>
+      <td>128.0</td>
       <td>2.339736</td>
       <td>2.339766</td>
       <td>-0.000031</td>
@@ -13680,6 +13708,7 @@ div#notebook {
     </tr>
     <tr>
       <th>8</th>
+      <td>256.0</td>
       <td>2.339759</td>
       <td>2.339766</td>
       <td>-0.000008</td>
@@ -13687,6 +13716,7 @@ div#notebook {
     </tr>
     <tr>
       <th>9</th>
+      <td>512.0</td>
       <td>2.339764</td>
       <td>2.339766</td>
       <td>-0.000002</td>
@@ -13706,7 +13736,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Q3.2.1-$e^{-x^{2}}$">Q3.2.1 $e^{-x^{2}}$<a class="anchor-link" href="#Q3.2.1-$e^{-x^{2}}$">&#182;</a></h1>
+<h1 id="Q3.2.1-$e^{-x^{2}}$-from-0-to-10">Q3.2.1 $e^{-x^{2}}$ from 0 to 10<a class="anchor-link" href="#Q3.2.1-$e^{-x^{2}}$-from-0-to-10">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13715,14 +13745,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
 <span class="n">cint</span> <span class="o">=</span> <span class="mf">0.886227</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">10.001</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span> <span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Sn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -13759,6 +13789,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>n</th>
       <th>T(n)</th>
       <th>S(n)</th>
       <th>TError</th>
@@ -13768,6 +13799,7 @@ div#notebook {
   <tbody>
     <tr>
       <th>1</th>
+      <td>2.0</td>
       <td>2.500000</td>
       <td>1.666667</td>
       <td>1.613773e+00</td>
@@ -13775,6 +13807,7 @@ div#notebook {
     </tr>
     <tr>
       <th>2</th>
+      <td>4.0</td>
       <td>1.254826</td>
       <td>0.839768</td>
       <td>3.685991e-01</td>
@@ -13782,6 +13815,7 @@ div#notebook {
     </tr>
     <tr>
       <th>3</th>
+      <td>8.0</td>
       <td>0.889428</td>
       <td>0.767629</td>
       <td>3.201278e-03</td>
@@ -13789,6 +13823,7 @@ div#notebook {
     </tr>
     <tr>
       <th>4</th>
+      <td>16.0</td>
       <td>0.886227</td>
       <td>0.885160</td>
       <td>-7.452838e-08</td>
@@ -13796,6 +13831,7 @@ div#notebook {
     </tr>
     <tr>
       <th>5</th>
+      <td>32.0</td>
       <td>0.886227</td>
       <td>0.886227</td>
       <td>-7.454724e-08</td>
@@ -13803,6 +13839,7 @@ div#notebook {
     </tr>
     <tr>
       <th>6</th>
+      <td>64.0</td>
       <td>0.886227</td>
       <td>0.886227</td>
       <td>-7.454724e-08</td>
@@ -13810,6 +13847,7 @@ div#notebook {
     </tr>
     <tr>
       <th>7</th>
+      <td>128.0</td>
       <td>0.886227</td>
       <td>0.886227</td>
       <td>-7.454724e-08</td>
@@ -13817,6 +13855,7 @@ div#notebook {
     </tr>
     <tr>
       <th>8</th>
+      <td>256.0</td>
       <td>0.886227</td>
       <td>0.886227</td>
       <td>-7.454724e-08</td>
@@ -13824,6 +13863,7 @@ div#notebook {
     </tr>
     <tr>
       <th>9</th>
+      <td>512.0</td>
       <td>0.886227</td>
       <td>0.886227</td>
       <td>-7.454724e-08</td>
@@ -13843,7 +13883,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Q3.2.2-$tan^{-1}(1+x^{2})$">Q3.2.2 $tan^{-1}(1+x^{2})$<a class="anchor-link" href="#Q3.2.2-$tan^{-1}(1+x^{2})$">&#182;</a></h1>
+<h1 id="Q3.2.2-$tan^{-1}(1+x^{2})$-from-0-to-2">Q3.2.2 $tan^{-1}(1+x^{2})$ from 0 to 2<a class="anchor-link" href="#Q3.2.2-$tan^{-1}(1+x^{2})$-from-0-to-2">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13852,14 +13892,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;T(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;S(n)&#39;</span><span class="p">,</span> <span class="s1">&#39;TError&#39;</span><span class="p">,</span> <span class="s1">&#39;SError&#39;</span><span class="p">])</span>
 <span class="n">cint</span> <span class="o">=</span> <span class="mf">2.17426</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.001</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span> <span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">Sn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">Tn</span><span class="p">,</span> <span class="n">Sn</span><span class="p">,</span> <span class="n">Tn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">,</span> <span class="n">Sn</span> <span class="o">-</span> <span class="n">cint</span><span class="p">]</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -13896,6 +13936,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>n</th>
       <th>T(n)</th>
       <th>S(n)</th>
       <th>TError</th>
@@ -13905,6 +13946,7 @@ div#notebook {
   <tbody>
     <tr>
       <th>1</th>
+      <td>2.0</td>
       <td>2.186548</td>
       <td>2.195798</td>
       <td>0.012288</td>
@@ -13912,6 +13954,7 @@ div#notebook {
     </tr>
     <tr>
       <th>2</th>
+      <td>4.0</td>
       <td>2.177450</td>
       <td>2.174418</td>
       <td>0.003190</td>
@@ -13919,6 +13962,7 @@ div#notebook {
     </tr>
     <tr>
       <th>3</th>
+      <td>8.0</td>
       <td>2.175061</td>
       <td>2.174265</td>
       <td>0.000801</td>
@@ -13926,6 +13970,7 @@ div#notebook {
     </tr>
     <tr>
       <th>4</th>
+      <td>16.0</td>
       <td>2.174461</td>
       <td>2.174261</td>
       <td>0.000201</td>
@@ -13933,6 +13978,7 @@ div#notebook {
     </tr>
     <tr>
       <th>5</th>
+      <td>32.0</td>
       <td>2.174311</td>
       <td>2.174261</td>
       <td>0.000051</td>
@@ -13940,6 +13986,7 @@ div#notebook {
     </tr>
     <tr>
       <th>6</th>
+      <td>64.0</td>
       <td>2.174274</td>
       <td>2.174261</td>
       <td>0.000014</td>
@@ -13947,6 +13994,7 @@ div#notebook {
     </tr>
     <tr>
       <th>7</th>
+      <td>128.0</td>
       <td>2.174264</td>
       <td>2.174261</td>
       <td>0.000004</td>
@@ -13954,6 +14002,7 @@ div#notebook {
     </tr>
     <tr>
       <th>8</th>
+      <td>256.0</td>
       <td>2.174262</td>
       <td>2.174261</td>
       <td>0.000002</td>
@@ -13961,6 +14010,7 @@ div#notebook {
     </tr>
     <tr>
       <th>9</th>
+      <td>512.0</td>
       <td>2.174261</td>
       <td>2.174261</td>
       <td>0.000001</td>
