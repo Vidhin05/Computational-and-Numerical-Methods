@@ -1,0 +1,8 @@
+name: CNM
+dependencies:
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - sympy
+  
